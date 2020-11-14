@@ -1,0 +1,10 @@
+.app {
+  margin: 0;
+  padding: 0;
+  background-color: $bg;
+  height: 100vh;
+
+  &__wrapper {
+    height: 100%;
+  }
+}
