@@ -1,7 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useDispatch } from 'react-redux';
+import { toggleCheckbox } from '../../../redux/actions';
 
 function Checkbox({label, id}) {
+  const dispatch = useDispatch();
+
+  const handleChange = _ => dispatch(toggleCheckbox());
+
   return (
     <label htmlFor={id}>
       <span className="checkbox__wrapper">
@@ -10,6 +16,7 @@ function Checkbox({label, id}) {
           name={id} 
           id={id}
           className='checkbox checkbox--true form__checkbox'
+          onClick={ handleChange }
         />
         <span className="checkbox checkbox--fake "></span>
       </span>

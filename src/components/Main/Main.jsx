@@ -21,7 +21,8 @@ export default function Main() {
             id="form-name" 
             label="Имя" 
             placeholder="Введите Ваше имя" 
-            type="text" 
+            type="text"
+            checkFor="name" 
           />
         </div>
 
@@ -30,7 +31,8 @@ export default function Main() {
             id="form-mail" 
             label="Email" 
             placeholder="Введите Ваш email" 
-            type="email" 
+            type="email"
+            checkFor="email" 
           />
         </div>
 
@@ -39,7 +41,8 @@ export default function Main() {
             id="form-phone" 
             label="Номер телефона" 
             placeholder="Ваш номер телефона" 
-            type="phone" 
+            type="phone"
+            checkFor="phone"
           /> 
         </div>
 
