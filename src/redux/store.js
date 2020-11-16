@@ -5,15 +5,15 @@ const initialState = {
   registration: {
     name: {
       value: null,
-      hasError: false
+      error: null
     },
     email: {
       value: null,
-      hasError: false
+      error: null
     },
     phone: {
       value: null,
-      hasError: false
+      error: null
     },
     language: null,
     checkbox: false

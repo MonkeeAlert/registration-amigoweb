@@ -4,6 +4,7 @@ import Dropdown from '../Controls/Dropdown/Dropdown'
 import Button from '../Controls/Button/Button'
 import Input from '../Controls/TextField/Input'
 import Form from '../Form/Form'
+import { setEmail, setLanguage, setName, setPhone } from '../../redux/actions'
 
 export default function Main() {
   return (
@@ -22,7 +23,8 @@ export default function Main() {
             label="Имя" 
             placeholder="Введите Ваше имя" 
             type="text"
-            checkFor="name" 
+            selector={`registration.name`}
+            onInputChange={ setName }
           />
         </div>
 
@@ -32,7 +34,8 @@ export default function Main() {
             label="Email" 
             placeholder="Введите Ваш email" 
             type="email"
-            checkFor="email" 
+            selector={`registration.email`}
+            onInputChange={ setEmail }
           />
         </div>
 
@@ -41,8 +44,9 @@ export default function Main() {
             id="form-phone" 
             label="Номер телефона" 
             placeholder="Ваш номер телефона" 
-            type="phone"
-            checkFor="phone"
+            type="text"
+            selector={`registration.phone`}
+            onInputChange={ setPhone }
           /> 
         </div>
 
@@ -50,14 +54,15 @@ export default function Main() {
           <Dropdown 
             id="form-languages" 
             values={['Русский', 'Английский', 'Китайский', 'Испанский']} 
-            defaultValue='Язык'
+            label='Язык'
+            onItemChange={ setLanguage }
           />
         </div>
 
         <div className="form__row">
           <Checkbox 
             id="form-agreement" 
-            label={ <>Принимаю <a href="#" className="text--link">условия</a> соглашения</> }
+            label={ <>Принимаю <a href="/" className="text--link">условия</a> соглашения</> }
           />
         </div>
 
