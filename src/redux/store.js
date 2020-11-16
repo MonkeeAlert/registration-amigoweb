@@ -15,8 +15,25 @@ const initialState = {
       value: null,
       error: null
     },
-    language: null,
-    checkbox: false
+    checkbox: {
+      value: false,
+      error: null
+    },
+    // language: {
+    //   value: false,
+    //   error: null
+    // },  
+    language: null
+  },
+
+  errors: {
+    registration: {
+      name: null,
+      email: null,
+      phone: null,
+      checkbox: null,
+      // language: null
+    }
   }
 }
 

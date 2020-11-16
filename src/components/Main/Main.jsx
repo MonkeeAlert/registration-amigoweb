@@ -1,10 +1,10 @@
 import React from 'react'
 import Checkbox from '../Controls/Checkbox/Checkbox'
 import Dropdown from '../Controls/Dropdown/Dropdown'
-import Button from '../Controls/Button/Button'
+import ConnectedButton from '../Controls/Button/ConnectedButton'
 import Input from '../Controls/TextField/Input'
 import Form from '../Form/Form'
-import { setEmail, setLanguage, setName, setPhone } from '../../redux/actions'
+import { setRegistrationEmail, setRegistrationLanguage, setRegistrationName, setRegistrationPhone, toggleRegistrationCheckbox } from '../../redux/actions'
 
 export default function Main() {
   return (
@@ -24,7 +24,7 @@ export default function Main() {
             placeholder="Введите Ваше имя" 
             type="text"
             selector={`registration.name`}
-            onInputChange={ setName }
+            onInputChange={ setRegistrationName }
           />
         </div>
 
@@ -35,7 +35,7 @@ export default function Main() {
             placeholder="Введите Ваш email" 
             type="email"
             selector={`registration.email`}
-            onInputChange={ setEmail }
+            onInputChange={ setRegistrationEmail }
           />
         </div>
 
@@ -46,7 +46,7 @@ export default function Main() {
             placeholder="Ваш номер телефона" 
             type="text"
             selector={`registration.phone`}
-            onInputChange={ setPhone }
+            onInputChange={ setRegistrationPhone }
           /> 
         </div>
 
@@ -55,7 +55,7 @@ export default function Main() {
             id="form-languages" 
             values={['Русский', 'Английский', 'Китайский', 'Испанский']} 
             label='Язык'
-            onItemChange={ setLanguage }
+            onItemChange={ setRegistrationLanguage }
           />
         </div>
 
@@ -63,13 +63,15 @@ export default function Main() {
           <Checkbox 
             id="form-agreement" 
             label={ <>Принимаю <a href="/" className="text--link">условия</a> соглашения</> }
+            onStateChange={toggleRegistrationCheckbox}
           />
         </div>
 
         <div className="form__row">
-          <Button 
+          <ConnectedButton 
             text="Зарегистрироваться"
             type="submit"
+            check='registration'
             isFluid
           />
         </div>

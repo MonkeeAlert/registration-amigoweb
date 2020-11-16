@@ -1,0 +1,81 @@
+@media (max-width: 480px) {
+  .main {
+    &--registration {
+      align-items: flex-start;
+    }
+  }
+  
+  .form {
+    &--registration {
+      width: 90%;
+      margin: 30px auto;
+      padding: 25px 30px;
+    }
+
+    &__row {
+      &--header {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .text {
+    &--header {
+      font-size: 24px;
+    }
+
+    &--regular {
+      font-size: 12px;
+    }
+  }
+
+  .input {
+    font-size: 12px;
+    height: 40px;
+    padding: 0 11px;
+
+    &__error {
+      font-size: 12px;
+      bottom: -20px;
+    }
+
+    &:active,
+    &:focus {
+      padding: 0 10px;
+    }
+  }
+
+  .button {
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .checkbox {
+    &__wrapper {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .select {
+    &__list {
+      padding: 5px 0;
+
+      &-item {
+        height: 33px;
+        line-height: 33px;
+        font-size: 12px;
+        padding: 0 11px;
+      }
+    }
+
+    &__placeholder {
+
+      &:after {
+        right: 10px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

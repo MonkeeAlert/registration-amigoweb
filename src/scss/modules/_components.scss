@@ -15,9 +15,6 @@
   }
 
   &--error {
-    @include text('IBM R', 14px);
-    line-height: 18.2px;
-    margin-top: 8px;
     color: $red;
   }
 }
@@ -28,7 +25,8 @@
   border-radius: 6px;
   cursor: pointer;
   @include text('IBM M', 16px);
-
+  transition: .2s ease-in;
+  
   &--fluid {
     width: 100%;
   }
@@ -36,7 +34,23 @@
   &--disabled {
     background-color: $btn-disabled;
     color: $btn-disabled-text;
-    box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.08), 0px 4px 8px rgba(44, 39, 56, 0.08);;
+    box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.08), 0px 4px 8px rgba(44, 39, 56, 0.08);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &--blue {
+    background-color: $blue;
+    color: $white;
+
+    &:active,
+    &:focus {
+      border: 2px solid rgba(44,39,56,0.86);
+    }
+
+    &:hover {
+      box-shadow: 0px 12px 24px rgba(44, 39, 56, 0.08), 0px 24px 48px rgba(44, 39, 56, 0.16);
+    }
   }
 }
 
@@ -58,14 +72,22 @@
   &:active,
   &:focus {
     outline: none;
-    border: 3px solid $blue;
-    padding: 0 14px;
+    border: 2px solid $blue;
+    padding: 0 15px;
   }
 
   &__label {
     color: $grey;
     margin-bottom: 7px;
     @include text('IBM M', 16px);
+  }
+
+  &__error {
+    position: absolute;
+    bottom: -24px; 
+    @include text('IBM R', 14px);
+    line-height: 18.2px;
+    margin-top: 8px;
   }
 }
 
@@ -143,6 +165,23 @@
     display: flex;
     align-items: center;
     user-select: none;
+
+    &--opened {
+      outline: none;
+      border: 2px solid $blue;
+      padding: 0 15px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 11px;
+      width: 30px;
+      height: 30px;
+      background: url('../../img/dropdown.svg') no-repeat center / contain;
+      transform: translateY(-50%);
+    }
   }
 
   &__list {
