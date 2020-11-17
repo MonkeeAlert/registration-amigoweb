@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import PropTypes from 'prop-types'
-import { useDispatch, useSelector, useStore } from 'react-redux';
+import { useDispatch, useStore } from 'react-redux';
 import { findBranch } from '../../../utils/functions';
 
 function Input({ label, type, id, placeholder, onInputChange, selector }) {  
